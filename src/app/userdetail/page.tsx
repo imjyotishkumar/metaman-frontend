@@ -71,8 +71,8 @@ const UserDetail: React.FC = () => {
             <Navbar />
             <div className="md:flex justify-around  mt-5 mb-4">
                 <div className=" ">
-                   
-                   <Image src={user?.imageurl || "/placeholder-image.png"} alt="User Image" width={450} height={450}/>
+
+                    <Image src={user?.imageurl || "/placeholder-image.png"} alt="User Image" width={450} height={450} />
                 </div>
                 <div className="flex flex-col md:w-1/2">
                     <div className=" rounded-lg shadow-md">
@@ -145,8 +145,12 @@ const UserDetail: React.FC = () => {
                                 className="border p-2 mb-4 w-full"
                                 required
                             />
-                            <Link href={`/payment`}>
-                                <button type="submit" className="bg-white  cursor-pointer font-[700] text-black px-4 py-2 rounded w-full">
+                            <Link href="/payment" onClick={async (e) => {
+                                e.preventDefault(); 
+                                await handleSubmit(e); 
+                                window.location.href = "/payment"; 
+                            }}>
+                                <button type="submit" className="bg-white cursor-pointer font-[700] text-black px-4 py-2 rounded w-full">
                                     Continue →
                                 </button>
                             </Link>

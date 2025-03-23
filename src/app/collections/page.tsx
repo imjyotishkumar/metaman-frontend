@@ -22,7 +22,7 @@ const Collections = async () => {
                 <h2 className="text-2xl font-bold text-center my-4">Product Collections</h2>
                 <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {posts.map((post) => (
-                        <div key={post._id} className="p-4 shadow-md rounded-lg border">
+                        <div key={post._id} className="p-4 shadow-md rounded-lg">
                             <Product 
                                 id={post._id} 
                                 image={post.imageurl} 

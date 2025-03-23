@@ -105,7 +105,7 @@ const Checkout = () => {
                         <>
                             <div className="flex flex-col md:flex-row md:w-full justify-around">
                                 <div className="md:w-1/2 flex gap-5 rounded-lg shadow-lg">
-                                    <Image src={user.imageurl} height={550} width={550} alt={user.title} className="rounded-md" />
+                                    <Image src={user.imageurl} height={500} width={480} alt={user.title} className="rounded-md" />
                                 </div>
                                 <div className="md:w-1/2">
                                     <form onSubmit={handleSubmit}>
