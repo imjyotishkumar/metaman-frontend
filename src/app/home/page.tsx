@@ -20,8 +20,8 @@ const Home = () => {
             <Navbar />
             <div>
                 <div>
-                    <Image src={`/assets/Artboard_6_3.webp`} alt="" width={600} height={400} className="w-full hidden md:block " />
-                    <Image src={`/assets/Artboard_7_3.webp`} alt="" width={600} height={600} className="w-full md:hidden  " />
+                    <Image src={`https://metaman.in/cdn/shop/files/Artboard_6_3.jpg?v=1741598701&width=1950`} alt="" width={600} height={400} className="w-full hidden md:block " />
+                    <Image src={`https://metaman.in/cdn/shop/files/Artboard_7_3.jpg?v=1741598701&width=540`} alt="" width={600} height={600} className="w-full md:hidden  " />
                 </div>
                 <div className="overflow-hidden w-full bg-black text-white p-1">
                     <div
