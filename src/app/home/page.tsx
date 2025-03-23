@@ -4,6 +4,7 @@ import Header from "../Components/Header"
 import Navbar from "../Components/Navbar"
 import { useEffect, useState } from "react";
 import Collections from "../collections/page";
+import Footer from "../Components/Footer";
 
 const Home = () => {
     const [position, setPosition] = useState(100);
@@ -44,6 +45,7 @@ const Home = () => {
 
             </div>
             <Collections/>
+            <Footer/>
         </div>
     )
 }
