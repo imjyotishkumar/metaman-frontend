@@ -1,7 +1,7 @@
 import Product from "../Components/Product"
 
 const Collections = async () => {
-    const data = await fetch('http://localhost:3001/users')
+    const data = await fetch('https://mataman-backend.vercel.app/users')
     const posts: { _id: string; imageurl: string; title: string; oldprice: number; newprice: number }[] = await data.json()
 
   return (

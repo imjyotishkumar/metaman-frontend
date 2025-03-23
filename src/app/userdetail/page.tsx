@@ -16,7 +16,7 @@ const UserDetail: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:3001/userdetail', {
+        const response = await fetch('https://mataman-backend.vercel.app/userdetail', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
