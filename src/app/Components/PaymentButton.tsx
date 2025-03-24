@@ -7,6 +7,7 @@ interface PaymentProps {
     customer_email: string;
     customer_phone: number | null;
     order_amount: number;
+    onClick?: () => Promise<void>;
 }
 const Payment: React.FC<PaymentProps> = (props) => {
     
@@ -60,8 +61,7 @@ const Payment: React.FC<PaymentProps> = (props) => {
                     <button
                         onClick={handleClick}
                         className="w-full bg-white hover:bg-gray-300 text-black font-bold py-2 px-4 rounded-lg transition"
-                    >
-                        Pay Now
+                    > pay now
                     </button>
                 </div>
             </div>

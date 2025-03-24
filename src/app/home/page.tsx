@@ -17,8 +17,6 @@ const Home = () => {
 
     return (
         <div>
-            <Header />
-            <Navbar />
             <div>
                 <div>
                     <Image src={`https://metaman.in/cdn/shop/files/Artboard_6_3.jpg?v=1741598701&width=1950`} alt="" width={600} height={400} className="w-full hidden md:block " />
