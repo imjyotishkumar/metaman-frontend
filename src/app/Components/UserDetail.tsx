@@ -5,6 +5,7 @@ import Navbar from "../Components/Navbar";
 import Header from "../Components/Header";
 import Image from "next/image";
 import Payment from "./PaymentButton";
+import Footer from "./Footer";
 
 const UserDetail: React.FC = () => {
     const searchParams = useSearchParams();
@@ -190,6 +191,7 @@ const UserDetail: React.FC = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </>
     );
 };

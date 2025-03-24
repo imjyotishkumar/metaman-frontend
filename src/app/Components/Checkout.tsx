@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Header from "./Header";
 import Link from "next/link";
+import Footer from "./Footer";
 
 interface User {
     _id: string;
@@ -167,6 +168,7 @@ const Checkout = () => {
                         <p className="text-red-500">User not found</p>
                     )}
                 </div>
+                <Footer/>
             </>
         
     );
