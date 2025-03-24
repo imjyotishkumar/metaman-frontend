@@ -9,13 +9,20 @@ const Collections = async () => {
         const text = await response.text(); // Read response as text first
         console.log("Raw response:", text); // Log response for debugging
 
-        const posts: { 
-            _id: string; 
-            imageurl: string; 
-            title: string; 
-            oldprice: number; 
-            newprice: number; 
-        }[] = JSON.parse(text); // Parse JSON manually
+        let posts: {
+            _id: string;
+            imageurl: string;
+            title: string;
+            oldprice: number;
+            newprice: number;
+        }[] = [];
+
+        try {
+            posts = JSON.parse(text); // Attempt to parse JSON
+        } catch (error) {
+            console.error("Failed to parse JSON:", error);
+            throw new Error("Invalid JSON response from the server.");
+        }
 
         return (
             <div>
@@ -23,12 +30,12 @@ const Collections = async () => {
                 <ul className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {posts.map((post) => (
                         <div key={post._id} className="p-4 shadow-md rounded-lg">
-                            <Product 
-                                id={post._id} 
-                                image={post.imageurl} 
-                                title={post.title} 
-                                oldprice={post.oldprice} 
-                                newprice={post.newprice} 
+                            <Product
+                                id={post._id}
+                                image={post.imageurl}
+                                title={post.title}
+                                oldprice={post.oldprice}
+                                newprice={post.newprice}
                             />
                         </div>
                     ))}

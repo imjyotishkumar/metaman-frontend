@@ -3,9 +3,8 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Navbar from "../Components/Navbar";
 import Header from "../Components/Header";
-import Link from "next/link";
 import Image from "next/image";
-import Payment from "../payment/page";
+import Payment from "./PaymentButton";
 
 const UserDetail: React.FC = () => {
     const searchParams = useSearchParams();
@@ -46,11 +45,11 @@ const UserDetail: React.FC = () => {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [mobile, setMobile] = useState<number | "">("");
+    const [mobile, setMobile] = useState<number | null>(null);
     const [state, setState] = useState("");
     const [district, setDistrict] = useState("");
     const [village, setVillage] = useState("");
-    const [pincode, setPincode] = useState<number | "">("");
+    const [pincode, setPincode] = useState<number | null>(null);
     const [nearby, setNearby] = useState("");
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -100,11 +99,12 @@ const UserDetail: React.FC = () => {
                                 <input
                                     type="number"
                                     placeholder="Enter Mobile Number"
-                                    value={mobile}
-                                    onChange={(e) => setMobile(Number(e.target.value) || "")}
+                                    value={mobile ?? ""}
+                                    onChange={(e) => setMobile(e.target.value ? Number(e.target.value) : null)}
                                     className="w-full outline-none"
                                     required
                                 />
+
                             </div>
                             <input
                                 type="text"
@@ -133,8 +133,8 @@ const UserDetail: React.FC = () => {
                             <input
                                 type="number"
                                 placeholder="Pincode"
-                                value={pincode}
-                                onChange={(e) => setPincode(Number(e.target.value) || "")}
+                                value={pincode ?? ""}
+                                onChange={(e) => setPincode(e.target.value ? Number(e.target.value) : null)}
                                 className="border p-2 mb-2 w-full"
                                 required
                             />
@@ -146,20 +146,19 @@ const UserDetail: React.FC = () => {
                                 className="border p-2 mb-4 w-full"
                                 required
                             />
-                            <Link href="/payment" onClick={async (e) => {
-                                e.preventDefault(); 
-                                await handleSubmit(e); 
-                                window.location.href = "/payment"; 
-                            }}>
-                                <button type="submit" className="bg-white cursor-pointer font-[700] text-black px-4 py-2 rounded w-full">
-                                    Continue →
-                                </button>
-                            </Link>
+                            <button type="submit" className=" cursor-pointer font-[700] text-black px-4 py-2 rounded w-full">
+                                <div>
+                                    <Payment
+                                        customer_id={mobile ?? 0}
+                                        customer_name={name}
+                                        customer_email={email}
+                                        customer_phone={mobile ?? 0}
+                                        order_amount={2}
+                                    />                                </div>
+                            </button>
                         </form>
                     </div>
-                    <div>
-                        <Payment/>
-                    </div>
+
                 </div>
             </div>
         </>
