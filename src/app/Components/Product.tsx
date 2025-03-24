@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 interface ProductProps {
   id: string;
+  category:string;
   image: string;
   title: string;
   newprice: number;
@@ -11,7 +12,7 @@ interface ProductProps {
 
 const Product = (props: ProductProps) => {
   return (
-    <div className='cursor-pointer'>
+    <div className='cursor-pointer p-2'>
         <Link href={`/checkout?${props.id}`}>
         <div>
             <Image src={`${props.image}`} alt='' width={400} height={400} className='h-[60vh]'/>

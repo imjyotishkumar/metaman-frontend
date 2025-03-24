@@ -3,6 +3,7 @@ import Image from "next/image"
 import { useEffect, useState } from "react";
 import Collections from "../collections/page";
 import Footer from "../Components/Footer";
+import About from "../about/page";
 
 const Home = () => {
     const [position, setPosition] = useState(100);
@@ -41,6 +42,7 @@ const Home = () => {
 
             </div>
             <Collections/>
+            <About/>
             <Footer/>
         </div>
     )
