@@ -1,7 +1,5 @@
 'use client'
 import Image from "next/image"
-import Header from "../Components/Header"
-import Navbar from "../Components/Navbar"
 import { useEffect, useState } from "react";
 import Collections from "../collections/page";
 import Footer from "../Components/Footer";
