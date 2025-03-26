@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Collections = async () => {
     try {
-        const response = await fetch("https://mataman-backend.vercel.app/users", {
+        const response = await fetch("https://mataman-backend-ruddy.vercel.app/users", {
             cache: "no-store", // Ensures fresh data is fetched every time
         });
 

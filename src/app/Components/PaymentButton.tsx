@@ -35,7 +35,7 @@ const Payment: React.FC<PaymentProps> = (props) => {
 
             console.log("Payload being sent:", payload); // Debugging log
 
-            const response = await axios.post('https://mataman-backend.vercel.app/paymentroutes/payment', payload, {
+            const response = await axios.post('https://mataman-backend-ruddy.vercel.app/paymentroutes/payment', payload, {
                 headers: {
                     'Content-Type': 'application/json',
                 },

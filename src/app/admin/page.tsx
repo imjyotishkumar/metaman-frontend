@@ -11,7 +11,7 @@ const Admin: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const response = await fetch('https://mataman-backend.vercel.app/users', {
+        const response = await fetch('https://mataman-backend-ruddy.vercel.app/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

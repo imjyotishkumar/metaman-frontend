@@ -27,7 +27,7 @@ const UserDetail: React.FC = () => {
             }
 
             try {
-                const response = await fetch(`https://mataman-backend.vercel.app/users/${userId}`);
+                const response = await fetch(`https://mataman-backend-ruddy.vercel.app/users/${userId}`);
                 if (!response.ok) {
                     throw new Error("Failed to fetch user data");
                 }
@@ -64,7 +64,7 @@ const UserDetail: React.FC = () => {
             };
             console.log("Payload being sent to API:", payload);
     
-            const response = await fetch('https://mataman-backend.vercel.app/userdetail', {
+            const response = await fetch('https://mataman-backend-ruddy.vercel.app/userdetail', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

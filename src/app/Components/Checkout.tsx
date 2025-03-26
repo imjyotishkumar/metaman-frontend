@@ -37,7 +37,7 @@ const FetchUser = ({ setUser, setLoading, setError }: FetchUserProps) => {
             }
 
             try {
-                const response = await fetch(`https://mataman-backend.vercel.app/users/${userId}`);
+                const response = await fetch(`https://mataman-backend-ruddy.vercel.app/users/${userId}`);
                 if (!response.ok) {
                     throw new Error("Failed to fetch user data");
                 }
@@ -71,7 +71,7 @@ const Checkout = () => {
         if (!user) return;
 
         try {
-            const response = await fetch("https://mataman-backend.vercel.app/userbuy", {
+            const response = await fetch("https://mataman-backend-ruddy.vercel.app/userbuy", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
